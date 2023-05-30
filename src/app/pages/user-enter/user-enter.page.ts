@@ -15,8 +15,6 @@ export class UserEnterPage implements OnInit {
   email: string = "";
   senha: string = "";
 
-  enter() {
-
-  }
+  enter(){}
 
 }
