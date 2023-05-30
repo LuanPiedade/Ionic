@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
-import { User } from '../model/user';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { UserService } from '../services/user-service';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/services/user.service';
+
 
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-user-form',
+  templateUrl: './user-form.page.html',
+  styleUrls: ['./user-form.page.scss'],
 })
-export class Tab2Page {
+export class UserFormPage implements OnInit {
 
-  userService: any;
+
+  ngOnInit() {
+  }
+
   constructor(
     private alertController: AlertController,
-    //private userService:UserService
+    private userService:UserService
   ) {}
   
   user = new User()
@@ -30,11 +34,12 @@ export class Tab2Page {
   }
 
   save(){
-    this.userService.add(this.user);
+    //this.userService.add(this.user);
     console.log(this.user);
     this.presentAlert("Aviso", "Cadastrado");
     
     
   }
+
 
 }

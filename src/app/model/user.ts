@@ -7,3 +7,5 @@ export class User {
     senha: string = "";
     telefone: string = "";
 }
+
+
